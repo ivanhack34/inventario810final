@@ -1,11 +1,16 @@
-﻿using System;
+﻿using Final_Integracion.Models;
+using Final_Integracion.Permisos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Final_Integracion.Permisos;
 
 namespace Final_Integracion.Controllers
 {
+
+    [ValidarSession]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -25,6 +30,12 @@ namespace Final_Integracion.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult CerrarSession()
+        {
+            Session["usuario"] = null;
+            return RedirectToAction("Login", "Acceso");
         }
     }
 }
