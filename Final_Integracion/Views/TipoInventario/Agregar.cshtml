@@ -1,0 +1,29 @@
+﻿@model Final_Integracion.Models.TipoInventario
+
+<h2>Agregar Tipo de Inventario</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Descripcion)
+        @Html.EditorFor(model => model.Descripcion)
+        @Html.ValidationMessageFor(model => model.Descripcion)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CuentaContable)
+        @Html.EditorFor(model => model.CuentaContable)
+        @Html.ValidationMessageFor(model => model.CuentaContable)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Estado)
+        @Html.EditorFor(model => model.Estado)
+        @Html.ValidationMessageFor(model => model.Estado)
+    </div>
+
+    <input type="submit" value="Guardar" class="btn btn-primary" />
+        @Html.ActionLink("Cancelar", "Index")
+}

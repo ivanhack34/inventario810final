@@ -1,0 +1,16 @@
+﻿@model Final_Integracion.Models.TipoInventario
+
+<h2>Eliminar Tipo de Inventario</h2>
+
+<div>
+    <h4>¿Está seguro que desea eliminar este tipo de inventario?</h4>
+    <h4>Descripción: @Html.DisplayFor(model => model.Descripcion)</h4>
+    <!-- Otros detalles del tipo de inventario -->
+
+    @using (Html.BeginForm("ConfirmarEliminar", "TipoInventario", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.TipoInventarioId) <!-- Campo oculto para TipoInventarioId -->
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+    }
+</div>

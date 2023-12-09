@@ -1,0 +1,30 @@
+﻿@model List<Final_Integracion.Models.TipoMovimiento>
+
+<h2>Tipos de Movimiento</h2>
+
+<p>
+    @Html.ActionLink("Agregar Nuevo Tipo de Movimiento", "Agregar")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Detalles", "Detalles", new { id = item.TipoMovimientoId }) |
+                @Html.ActionLink("Editar", "Editar", new { id = item.TipoMovimientoId }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.TipoMovimientoId })
+            </td>
+        </tr>
+    }
+</table>

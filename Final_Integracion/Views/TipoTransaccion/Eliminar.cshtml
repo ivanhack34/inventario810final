@@ -1,0 +1,15 @@
+﻿@model Final_Integracion.Models.TipoTransaccion
+
+<h2>Eliminar Tipo de Transacción</h2>
+
+<div>
+    <h4>¿Está seguro que desea eliminar este tipo de transacción?</h4>
+    <h4>Nombre: @Html.DisplayFor(model => model.Nombre)</h4>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TipoTransaccionId)
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+}

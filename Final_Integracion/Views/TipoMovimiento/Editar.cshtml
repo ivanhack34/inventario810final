@@ -1,0 +1,19 @@
+﻿@model Final_Integracion.Models.TipoMovimiento
+
+<h2>Editar Tipo de Movimiento</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TipoMovimientoId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Nombre)
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Guardar cambios" class="btn btn-primary" />
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+    </div>
+}

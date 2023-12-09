@@ -37,5 +37,21 @@ namespace Final_Integracion.Controllers
             Session["usuario"] = null;
             return RedirectToAction("Login", "Acceso");
         }
+
+        public ActionResult TipoMovimiento()
+        {
+            return RedirectToAction("Index", "TipoMovimiento");
+        }
+
+        public ActionResult TipoInventario() 
+        {
+            return RedirectToAction("Index","TipoInventario");
+        }
+
+        public ActionResult TipoTransaccion()
+        {
+            return RedirectToAction("Index", "TipoTransaccion");
+        }
+
     }
 }

@@ -1,0 +1,68 @@
+﻿@model List<Final_Integracion.Models.Transaccion>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Transacciones</title>
+</head>
+<body>
+    <h1>Lista de Transacciones</h1>
+
+    <p>
+        @Html.ActionLink("Crear Nueva Transacción", "Create")
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].TransaccionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].TipoTransaccionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].IdArticulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Monto)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransaccionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoTransaccionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdArticulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monto)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalles", "Details", new { id = item.TransaccionId }) |
+                    @Html.ActionLink("Editar", "Edit", new { id = item.TransaccionId }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.TransaccionId })
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

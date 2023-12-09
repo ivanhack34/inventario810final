@@ -1,0 +1,36 @@
+﻿@model List<Final_Integracion.Models.Almacen>
+
+<h2>Listado de Almacenes</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Agregar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Estado)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.ActionLink("Detalles", "Detalles", new { id = item.AlmacenID }) |
+                @Html.ActionLink("Editar", "Editar", new { id = item.AlmacenID }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.AlmacenID })
+            </td>
+        </tr>
+    }
+
+</table>

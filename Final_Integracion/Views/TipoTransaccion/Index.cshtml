@@ -1,0 +1,30 @@
+﻿@model List<Final_Integracion.Models.TipoTransaccion>
+
+<h2>Lista de Tipos de Transacción</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Agregar")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Detalles", "Detalles", new { id = item.TipoTransaccionId }) |
+                @Html.ActionLink("Editar", "Editar", new { id = item.TipoTransaccionId }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.TipoTransaccionId })
+            </td>
+        </tr>
+    }
+</table>

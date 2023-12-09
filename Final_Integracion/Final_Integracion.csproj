@@ -119,10 +119,23 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccesoController.cs" />
+    <Compile Include="Controllers\AlmacenController.cs" />
+    <Compile Include="Controllers\ArticuloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TipoInventarioController.cs" />
+    <Compile Include="Controllers\TipoMovimientoController.cs" />
+    <Compile Include="Controllers\TipoTransaccionController.cs" />
+    <Compile Include="Controllers\TransaccionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Almacen.cs" />
+    <Compile Include="Models\Articulo.cs" />
+    <Compile Include="Models\AsientoContable.cs" />
+    <Compile Include="Models\TipoInventario.cs" />
+    <Compile Include="Models\TipoMovimiento.cs" />
+    <Compile Include="Models\TipoTransaccion.cs" />
+    <Compile Include="Models\Transaccion.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Permisos\ValidarSessionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,6 +194,32 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Acceso\Login.cshtml" />
     <Content Include="Views\Acceso\Registrar.cshtml" />
+    <Content Include="Views\TipoMovimiento\Index.cshtml" />
+    <Content Include="Views\TipoMovimiento\Detalles.cshtml" />
+    <Content Include="Views\TipoMovimiento\Agregar.cshtml" />
+    <Content Include="Views\TipoMovimiento\Editar.cshtml" />
+    <Content Include="Views\TipoMovimiento\Eliminar.cshtml" />
+    <Content Include="Views\TipoInventario\Index.cshtml" />
+    <Content Include="Views\TipoInventario\Detalles.cshtml" />
+    <Content Include="Views\TipoInventario\Agregar.cshtml" />
+    <Content Include="Views\TipoInventario\Editar.cshtml" />
+    <Content Include="Views\TipoInventario\Eliminar.cshtml" />
+    <Content Include="Views\TipoTransaccion\Index.cshtml" />
+    <Content Include="Views\TipoTransaccion\Detalles.cshtml" />
+    <Content Include="Views\TipoTransaccion\Agregar.cshtml" />
+    <Content Include="Views\TipoTransaccion\Editar.cshtml" />
+    <Content Include="Views\TipoTransaccion\Eliminar.cshtml" />
+    <Content Include="Views\Articulo\Index.cshtml" />
+    <Content Include="Views\Articulo\Detalles.cshtml" />
+    <Content Include="Views\Articulo\Agregar.cshtml" />
+    <Content Include="Views\Articulo\Editar.cshtml" />
+    <Content Include="Views\Articulo\Eliminar.cshtml" />
+    <Content Include="Views\Almacen\Index.cshtml" />
+    <Content Include="Views\Almacen\Agregar.cshtml" />
+    <Content Include="Views\Almacen\Detalles.cshtml" />
+    <Content Include="Views\Almacen\Editar.cshtml" />
+    <Content Include="Views\Almacen\Eliminar.cshtml" />
+    <Content Include="Views\Transacciones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

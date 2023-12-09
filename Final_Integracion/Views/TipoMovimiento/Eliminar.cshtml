@@ -1,0 +1,14 @@
+﻿@model Final_Integracion.Models.TipoMovimiento
+
+<h2>Eliminar Tipo de Movimiento</h2>
+
+<div>
+    <h4>¿Está seguro que desea eliminar este tipo de movimiento?</h4>
+    <h4>Nombre: @Html.DisplayFor(model => model.Nombre)</h4>
+</div>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Eliminar" class="btn btn-danger" />
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+}

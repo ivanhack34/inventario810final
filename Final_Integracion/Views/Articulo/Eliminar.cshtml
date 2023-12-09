@@ -1,0 +1,30 @@
+﻿@model Final_Integracion.Models.Articulo
+
+<h2>Eliminar Artículo</h2>
+
+<div>
+    <h4>¿Está seguro que desea eliminar este artículo?</h4>
+    <h4>Descripción: @Html.DisplayFor(model => model.Descripcion)</h4>
+    <h4>Existencia: @Html.DisplayFor(model => model.Existencia)</h4>
+    <h4>Tipo Inventario ID: @Html.DisplayFor(model => model.TipoInventarioId)</h4>
+    <h4>Almacén ID: @Html.DisplayFor(model => model.AlmacenID)</h4>
+    <h4>Transacción ID: @Html.DisplayFor(model => model.TransaccionId)</h4>
+    <h4>Asiento ID: @Html.DisplayFor(model => model.AsientoId)</h4>
+    <h4>Costo Unitario: @Html.DisplayFor(model => model.CostoUnitario)</h4>
+    <h4>Estado: @Html.DisplayFor(model => model.Estado)</h4>
+    <!-- Agregar más campos según sea necesario -->
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.IdArticulo)
+    <input type="submit" value="Eliminar" class="btn btn-danger" />
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+}
+
+@if (TempData["MensajeError"] != null)
+{
+    <div class="alert alert-danger mt-3" role="alert">
+        @TempData["MensajeError"]
+    </div>
+}

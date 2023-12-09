@@ -1,0 +1,42 @@
+﻿@model List<Final_Integracion.Models.TipoInventario>
+
+<h2>Lista de Tipos de Inventario</h2>
+
+<p>
+    @Html.ActionLink("Agregar Tipo de Inventario", "Agregar")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Descripción
+        </th>
+        <th>
+            Cuenta Contable
+        </th>
+        <th>
+            Estado
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuentaContable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.ActionLink("Detalles", "Detalles", new { id = item.TipoInventarioId }) |
+                @Html.ActionLink("Editar", "Editar", new { id = item.TipoInventarioId }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.TipoInventarioId })
+            </td>
+        </tr>
+    }
+</table>

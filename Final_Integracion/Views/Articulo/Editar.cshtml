@@ -1,0 +1,61 @@
+﻿@model Final_Integracion.Models.Articulo
+
+<h2>Editar Artículo</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Existencia, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.Existencia, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Existencia, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TipoInventarioId, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.TipoInventarioId, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TipoInventarioId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AlmacenID, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.AlmacenID, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.AlmacenID, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TransaccionId, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.TransaccionId, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TransaccionId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AsientoId, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.AsientoId, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.AsientoId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CostoUnitario, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.CostoUnitario, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.CostoUnitario, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+    </div>
+}

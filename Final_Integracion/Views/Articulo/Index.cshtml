@@ -1,0 +1,79 @@
+﻿@model List<Final_Integracion.Models.Articulo>
+
+<h2>Lista de Artículos</h2>
+
+<p>@Html.ActionLink("Agregar Nuevo Artículo", "Agregar")</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Existencia
+            </th>
+            <th>
+                Tipo de Inventario
+            </th>
+            <th>
+                Almacén
+            </th>
+            <th>
+                Transacción
+            </th>
+            <th>
+                Asiento
+            </th>
+            <th>
+                Costo Unitario
+            </th>
+            <th>
+                Estado
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdArticulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Existencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoInventarioId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AlmacenID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransaccionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AsientoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostoUnitario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalles", "Detalles", new { id = item.IdArticulo }) |
+                    @Html.ActionLink("Editar", "Editar", new { id = item.IdArticulo }) |
+                    @Html.ActionLink("Eliminar", "Eliminar", new { id = item.IdArticulo })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

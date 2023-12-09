@@ -1,0 +1,36 @@
+﻿@model Final_Integracion.Models.Almacen
+
+@{
+    ViewBag.Title = "Eliminar Almacén";
+}
+
+<h2>Eliminar Almacén</h2>
+
+<div>
+    <h4>¿Está seguro que desea eliminar este almacén?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm("ConfirmarEliminar", "Almacen", new { id = Model.AlmacenID }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>
